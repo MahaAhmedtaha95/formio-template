@@ -137,12 +137,12 @@ function App() {
                             data: {
                                 requestTable: [
                                     {
-                                        name: "68761cc89c463de003aec671",
-                                        age: "RRN_FORMATION_Freq_000000401",
+                                        name: "Maha",
+                                        age: "30",
                                     },
                                     {
-                                        name: "68761cc89c463de003aec671",
-                                        age: "RRN_FORMATION_Freq_000000401",
+                                        name: "Ahmed",
+                                        age: "20",
                                     },
                                 ],
                             },
