@@ -1,12 +1,17 @@
 import "./App.css";
-import { Formio } from "formiojs";
+import { Formio } from "@formio/js";
 import { Form } from "@formio/react";
 
 import premium from "@formio/premium";
 
 import { useFetchFormioForm } from "./useFetchFormioForm";
 function App() {
+    Formio.setProjectUrl("https://formio-dev.iis-ssb.com/#/project");
+    Formio.license =
+        "eyJhbGciOiJQUzI1NiJ9.eyJsaWNlbnNlTmFtZSI6IkdpemEgU3lzdGVtcyBMaWJyYXJ5IExpY2Vuc2UgdGhyb3VnaCBKYW51YXJ5IDMxLCAyMDI3IiwiaWF0IjoxNzUzODQ4MDAwLCJleHAiOjE4MDE0MTQ4MDAsImZhaWxEYXRlIjoxODAzODM0MDAwLCJ0ZXJtcyI6eyJwcmVtaXVtIjp0cnVlLCJvZmZsaW5lIjp0cnVlLCJlbnRlcnByaXNlQnVpbGRlciI6ZmFsc2UsInJlcG9ydGluZyI6ZmFsc2UsInNxbGNvbm5lY3RvciI6ZmFsc2UsImVuZHBvaW50cyI6WyIqLmlpcy1zc2IuY29tIl0sImhvc3RuYW1lcyI6WyIqLmlpcy1zc2IuY29tIl19LCJpc3MiOiJodHRwczovL2Zvcm0uaW8iLCJzdWIiOiJGb3JtLmlvIn0.wGXIYlz8U1tjoSWh_oWMJJKKdway02kNz5OaZDiLY9hBcwlPm51auyDzihpoHEiSAvgN8lQWFFpE5HlD4CVdp1SypBrhPof4tsR3cZBVwzCDmtwibU2PTzAw7vujGu49UzNLKOVbkVt9CekIkT0euMpeS9ngAMskGl6BFyOv4_yfDq9rSWMK2FsaqMNfoBtUvtC77fkViFLHJZvi84Reju0MR30XEJnI7eQBuxoTiufSoItZTYsJGDusnGEytmgzz6-810dZzIIyAQkImTl-wxd_PNPGY-tVHuZ6-SkAVG_G3DMbfe9XIJlozuX-gZqCCSxSBM84gKdknRQqbDKcVA";
+
     Formio.use(premium);
+
     const { data, isLoading } = useFetchFormioForm("newform");
 
     if (isLoading) return <p>loading</p>;
@@ -141,6 +146,9 @@ function App() {
                                     },
                                 ],
                             },
+                        }}
+                        options={{
+                            renderMode: "html",
                         }}
                     />
                 ) : (
